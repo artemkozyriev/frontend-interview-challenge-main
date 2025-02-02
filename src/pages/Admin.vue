@@ -40,12 +40,12 @@ const deleteTicket = (id: number) => {
     <form @submit.prevent="addTicket" class="space-y-4">
         <label class="block">
             <span class="text-gray-700">Ticket Name</span>
-            <input v-model="name" type="text" placeholder="Ticket Name" class="w-full p-2 border rounded" />
+            <input v-model="name" type="text" placeholder="Ticket Name" name="name" class="w-full p-2 border rounded" />
         </label>
 
         <label class="block">
             <span class="text-gray-700">Description</span>
-            <textarea v-model="description" placeholder="Description" class="w-full p-2 border rounded"></textarea>
+            <textarea v-model="description" placeholder="Description" name="description" class="w-full p-2 border rounded"></textarea>
         </label>
 
         <label class="flex items-center space-x-2">
@@ -54,12 +54,12 @@ const deleteTicket = (id: number) => {
 
         <label class="block">
             <span class="text-gray-700">Count</span>
-            <input v-model.number="count" type="number" placeholder="Count" class="w-full p-2 border rounded" />
+            <input v-model.number="count" min="1" type="number" placeholder="Count" name="count" class="w-full p-2 border rounded" />
         </label>
 
         <label class="block">
             <span class="text-gray-700">Price ($)</span>
-            <input v-model.number="price" type="number" placeholder="Price" class="w-full p-2 border rounded" />
+            <input v-model.number="price" min="1" type="number" placeholder="Price" name="price" class="w-full p-2 border rounded" />
         </label>
 
         <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded cursor-pointer">Add Ticket</button>
